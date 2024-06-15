@@ -16,7 +16,6 @@ void keyboard_interrupt_handler() {
 }
 
 void init_keyboard() {
-    // Assume PIC is already initialized and IDT entry is set
-    // Enable keyboard interrupt
+   
     outb(0x21, inb(0x21) & ~0x01);
 }
