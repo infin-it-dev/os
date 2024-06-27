@@ -1,0 +1,28 @@
+struct FAT12_BPB {
+    uint8_t jmpBoot[3];
+    char OEMName[8];
+    uint16_t bytesPerSector;
+    uint8_t sectorsPerCluster;
+    uint16_t reservedSectorCount;
+    uint8_t numFATs;
+    uint16_t rootEntryCount;
+    uint16_t totalSectors16;
+    uint8_t media;
+    uint16_t FATSize16;
+    uint16_t sectorsPerTrack;
+    uint16_t numHeads;
+    uint32_t hiddenSectors;
+    uint32_t totalSectors32;
+    
+};
+
+
+int read_sector(uint32_t lba, uint8_t* buffer) {
+}
+
+
+int init_fat12() {
+    struct FAT12_BPB bpb;
+    read_sector(0, (uint8_t*)&bpb);
+    
+}
